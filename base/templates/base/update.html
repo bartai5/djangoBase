@@ -1,0 +1,30 @@
+{% extends "main.html" %}
+
+{% block title %}
+    Update {{ stud.name }}
+{% endblock title %}
+
+{% block content %}
+    <p class="pt-6 pl-2">Go back <a href="/" class='text-blue-500 underline'>Home</a></p>
+    <div class="w-full  py-[20px] flex justify-center align-center">
+        <form action="/update/{{stud.id}}" method='POST' class="bg-gray-100 p-[40px] ">
+            {% csrf_token %}
+            <h1 class='text-center text-3xl font-bold'>Register User</h1>
+            <div class='bg-gray-50 my-2 flex flex-col p-1 rounded-sm w-full'>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" class='border-[2px] mt-1' value='{{stud.name}}' placeholder="Full Name">
+            </div>
+            <div class='bg-gray-50 my-2 flex flex-col p-1 rounded-sm w-full'>
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" class='border-[2px] mt-1' value='{{stud.email}}' placeholder="Email Address">
+            </div>
+            <div class='bg-gray-50 my-2 flex flex-col p-1 rounded-sm w-full'>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" class='border-[2px] mt-1' value='{{stud.password}}' placeholder="Password">
+            </div>
+            <div>
+                <button type='submit' class='w-full bg-blue-500 text-white p-1 rounded-sm mt-2 hover:bg-blue-700'>Update</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

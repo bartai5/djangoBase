@@ -1,0 +1,22 @@
+{% extends "main.html" %} 
+
+{% block title %}
+    Django - Home
+{% endblock title %} 
+
+{% block content %}
+    <h1 class="text-3xl text-center">This is home</h1>
+    <p>Welcome to our site</p>
+    <p class='pb-2'>These are our premium members</p>
+
+    <ul class='pl-4'>
+        {% for user in userlist %}
+            <li>
+                <a href="about/{{user.id}}" class="underline text-blue-400 hover:text-blue-600 px-1">{{ user.id }}</a>.
+                {{user.name}}
+            </li>
+        {% endfor %}
+    </ul>
+
+    <p><a href="register/" class='text-blue-400 underline ml-2 mt-4 hover:text-blue-600'>Register User</a></p>
+{% endblock content %}

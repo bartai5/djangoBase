@@ -1,0 +1,18 @@
+{% extends "main.html" %} 
+
+{% block title %}
+    About Us 
+{% endblock title %} 
+
+{% block content %}
+    <p>Go back <a href="/" class='underline text-blue-400 hover:text-blue-600 px-1'>Home</a></p>
+    
+    <h1>About {{userlist.name}}</h1>
+    <p>{{userlist.email}}</p>
+
+    <div>
+        <a href="/update/{{userlist.id}}" class='underline text-blue-400 hover:text-blue-600 px-1'>Update</a>
+        <a href="/delete/{{userlist.id}}/" class='underline text-red-400 hover:text-red-600 px-1'>Delete</a>
+    </div>
+
+{% endblock content %}
